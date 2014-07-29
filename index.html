@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<style type="text/css">
+		body{
+			background-color: black;
+			color:white;
+		}
+		.item{
+			height: 60px;
+			line-height: 60px;
+
+  		}
+  		.num{
+  			font-size: 50px;
+  			background-color: gray;
+  			color: white;
+  		}
+  		.text{
+
+  		}
+  		.image{
+  			background-size:cover;
+  			height: auto;
+  		}
+  		.hrow{
+  			display: table;
+  			margin-bottom: 0px;
+  		}
+  		.hcell{
+  			float: none;
+  			display: table-cell;
+  		}
+  		.sub{
+  			display: none;
+  		}
+  		.head-text {
+  			font-size: 18px;
+  			font-style: bold;
+  		}
+  		.border{
+  						border-top: 0px;
+			border-left: 0px;
+			border-right: 0px;
+			border-bottom: 2px;
+			border-color: gray;
+			border-style: solid;
+  		}
+  </style>
+  <script type="text/javascript">
+$( window ).load(function() {
+	$('.sub').click(function() {
+		$('.sub').toggle();
+	});
+	$('.item').click(function() {
+		$('.sub').toggle();
+	});
+});
+  </script>
+  <script type="text/javascript">
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        alert('you did not alow geolocation this is needed for the site to work');
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+function notifyMe(text,title) {
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert(title+":\n"+text);
+  }
+
+  // Let's check if the user is okay to get some notification
+  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var notification = new Notification(title, { body:text,icon:'http://14.yrs.maxctech.co.uk/icon.jpg'});
+  }
+
+  // Otherwise, we need to ask the user for permission
+  // Note, Chrome does not implement the permission static property
+  // So we have to check for NOT 'denied' instead of 'default'
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+
+      // Whatever the user answers, we make sure we store the information
+      if(!('permission' in Notification)) {
+        Notification.permission = permission;
+      }
+
+      // If the user is okay, let's create a notification
+      if (permission === "granted") {
+        var notification = new Notification(title, { body:text,icon:'http://14.yrs.maxctech.co.uk/icon.jpg'});
+      }
+    });
+  }
+
+  // At last, if the user already denied any notification, and you 
+  // want to be respectful there is no need to bother him any more.
+}
+  </script>
+	</head>
+	<body>
+
+		<div class="container-fluid">
+			<div class="row head hrow border" >
+				<div class="col-xs-4 image hcell  " style='background-image: url("logo-art-2.png");'></div>
+				<div class="col-xs-10 head-text hcell">
+										<ul class="list-unstyled">
+						<li>danger</li>
+						<li>danger</li>
+						<li>danger</li>
+						<li>danger</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row item border">
+
+				<div class="col-xs-2 num ">1</div>
+				<div class="col-xs-10 text">text will go here</div>
+			</div>
+			<div class="row hrow border">
+				<div class="col-xs-4 image hcell" style='background-image: url("https://www.andrew.cmu.edu/user/cfperron/cats/images/cat8.jpg");'></div>
+				<div class="col-xs-10 text hcell">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius bibendum nulla non mollis. Phasellus faucibus orci sit amet adipiscing aliquet.<button onclick="notifyMe('Today you could be killed by a car stuck by ligning or eaten by a bear. Have fun','Hi there')">t</button> Fusce feugiat dui nec.
+				</div>
+			</div>
+			<div class="row item border">
+
+				<div class="col-xs-2 num ">2</div>
+				<div class="col-xs-10 text">text will go here</div>
+			</div>
+			<div class="row hrow border">
+				<div class="col-xs-4 image hcell" style='background-image: url("https://www.andrew.cmu.edu/user/cfperron/cats/images/cat8.jpg");'></div>
+				<div class="col-xs-10 text hcell">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius bibendum nulla non mollis. Phasellus faucibus orci sit amet adipiscing aliquet. Fusce feugiat dui nec.
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
