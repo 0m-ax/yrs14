@@ -66,6 +66,9 @@ $( window ).load(function() {
 	$('.item').click(function() {
 		$('.sub').toggle();
 	});
+  $(window).resize(function(){
+      $('.hrow').css({'height':($(document).width() / 4)+'px'});
+  });
 });
   </script>
   <script type="text/javascript">
@@ -113,6 +116,9 @@ function notifyMe(text,title) {
 
   // At last, if the user already denied any notification, and you 
   // want to be respectful there is no need to bother him any more.
+  
+  
+
 }
   </script>
 	</head>
