@@ -1,8 +1,8 @@
 <html>
 	<head>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,800,300' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 
 		<!-- Optional theme -->
@@ -11,6 +11,8 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 		<style type="text/css">
 
 		.item{
@@ -57,6 +59,12 @@
   </style>
   <script type="text/javascript">
 $( window ).load(function() {
+  $('.hrow').css({'height':($(document).width() / 4)+'px'});
+  if ($(document).width() < 600) {
+      $('.text').css({'font-size':($(document).width() / 30)+'px'});
+    } else {
+      $('.text').css({'font-size': '20px'});
+    }
 	$('.sub').click(function() {
 		$('.sub').toggle();
 	});
@@ -65,6 +73,11 @@ $( window ).load(function() {
 	});
   $(window).resize(function(){
       $('.hrow').css({'height':($(document).width() / 4)+'px'});
+      if ($(document).width() < 600) {
+        $('.text').css({'font-size':($(document).width() / 30)+'px'});
+      } else {
+        $('.text').css({'font-size': '20px'});
+      }
   });
 });
   </script>
@@ -137,7 +150,7 @@ function notifyMe(text,title) {
         <div class="row item border">
 
   				<div class="col-xs-2 num border text-center">1</div>
-  				<div class="col-xs-10 text text-header">text will go here</div>
+  				<div class="col-xs-10 text text-header"><h3>text will go here</h3></div>
   			</div>
   			<div class="row hrow">
   				<div class="col-xs-4 image hcell" style='background-image: url("https://www.andrew.cmu.edu/user/cfperron/cats/images/cat8.jpg");'></div>
@@ -147,7 +160,8 @@ function notifyMe(text,title) {
   			</div>
       </a>
       <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">
+        <div class="panel-body well">
+          <input class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
         </div>
       </div>
@@ -155,7 +169,7 @@ function notifyMe(text,title) {
         <div class="row item border">
 
   				<div class="col-xs-2 num border text-center">2</div>
-  				<div class="col-xs-10 text text-header">text will go here</div>
+  				<div class="col-xs-10 text text-header"><h3>text will go here</h3></div>
   			</div>
   			<div class="row hrow">
   				<div class="col-xs-4 image hcell" style='background-image: url("https://www.andrew.cmu.edu/user/cfperron/cats/images/cat8.jpg");'></div>
