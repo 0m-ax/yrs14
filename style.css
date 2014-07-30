@@ -3,6 +3,11 @@ body{
 	color:black !important;
 }
 
+a {
+  text-decoration:none !important;
+  color:black !important;
+}
+
 .fill { 
   min-width: 100%;
   width: 100%;
@@ -53,7 +58,7 @@ body{
 }
 
 .text-header {
-  font-size:30px;
+  font-size:25px;
 	color:black;
   height:62px;
   background-color:#FFFF00;
